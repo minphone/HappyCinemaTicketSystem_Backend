@@ -10,12 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417090809) do
+ActiveRecord::Schema.define(version: 20180417134555) do
 
   create_table "admins", force: :cascade do |t|
     t.string "username"
     t.string "email"
     t.string "password"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "region_name"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.integer "gender"
+    t.integer "region_id"
+    t.index ["region_id"], name: "index_users_on_region_id"
   end
 
 end
