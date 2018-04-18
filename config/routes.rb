@@ -3,4 +3,13 @@ Rails.application.routes.draw do
 
   root 'home#login'
 
+  resources :regions, only: [ :index, :create, :update, :destroy ]
+
+  #api
+  namespace :api do
+    namespace :v1 do
+      resources :regions, only: [ :index ]
+    end
+  end
+
 end
