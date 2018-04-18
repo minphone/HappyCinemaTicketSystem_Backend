@@ -1,4 +1,4 @@
-class HomeController < BaseController
+class HomeController < ActionController::Base
 
   def login
     

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HappyOnlineCinemaTicketBackend</title>
+    <%= favicon_link_tag asset_path('smile.png'), :rel => 'icon', :type =>  'image/png' %>
+    <title>Happy Online Cinema Ticket</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,7 @@
   </head>
 
   <body>
+    <%= render 'layouts/navigation' %>
     <%= yield %>
   </body>
 </html>
