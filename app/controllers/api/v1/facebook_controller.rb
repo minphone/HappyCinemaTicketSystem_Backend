@@ -6,7 +6,7 @@ class Api::V1::FacebookController < Api::V1::BaseController
 
       user = User.create(username: params[:username], email: params[:email], 
         gender: params[:gender], region_id: params[:region_id],
-        facebook_id: params[:fb_id])
+        facebook_id: params[:fb_id], profileUrl: params[:profileUrl])
 
       if @user.nil?
         render json: user.attributes.merge({
@@ -16,7 +16,7 @@ class Api::V1::FacebookController < Api::V1::BaseController
       else
         render json: user.attributes.merge({
           :error => "",
-          :is_verified => true
+          :is_verified => false
         })
       end
 

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#login'
 
   resources :regions, only: [ :index, :create, :update, :destroy ]
+  resources :genres, only: [ :index, :create, :update, :destroy ]
 
   #api
   namespace :api do
