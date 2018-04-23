@@ -1,7 +1,6 @@
 class Api::V1::FacebookController < Api::V1::BaseController
 
   def create
-
     if User.find_by_email(params[:email]).nil?
 
       user = User.create(username: params[:username], email: params[:email], 

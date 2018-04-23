@@ -12,5 +12,7 @@ class Admin < ApplicationRecord
   validates :password, presence: true,
             format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\W]).{8,}/i, 
             message: "Password must contain at least a lowercase letter, a uppercase, a digit, a special char and 8+ chars"}
+
+  has_secure_password
       
 end
