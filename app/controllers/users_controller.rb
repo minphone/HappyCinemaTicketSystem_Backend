@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:update, :show]
+  before_action :set_user, only: [:update, :show, :destroy]
 
   def new
     @user = User.new
   end
+
   def create
     @user = User.new(user_params)
     @user.username.downcase!
@@ -16,9 +17,10 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-  def show
-    
+
+  def show   
   end
+
   def update
     if @user.update(user_params)
       flash[:success] = "Your Profile is successfully updated"
@@ -27,8 +29,15 @@ class UsersController < ApplicationController
       render 'show'
     end
   end
+
   def index
-    
+    @users = User.paginate(page: params[:page], per_page: 10)
+  end
+
+  def destroy
+    @user.destroy
+    flash[:danger] = "User was successful deleted"
+    redirect_to users_path
   end
 
   private 

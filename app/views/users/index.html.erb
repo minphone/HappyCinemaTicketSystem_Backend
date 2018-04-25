@@ -1,1 +1,40 @@
 <h1 class= "center">User List created by using Facebook Account</h1>
+
+<%= will_paginate %>
+  <% @users.each do |user| %>
+    <% if !user.admin %>
+      <div class = "row">
+        <div class= "col-xs-8 col-xs-offset-2">
+          <div class = "well well-lg">
+            <h4>UserName</h4>
+            <div class = "title">
+              <%= user.username %>
+            </div>
+
+            <h4 class = "action">Email</h4>
+            <div class = "body">
+              <%= user.email %>
+            </div>
+
+            <h4 class = "action">Gender</h4>
+            <div class = "body">
+              <% if user.gender == 0 %>
+                Male
+              <% else %>
+                Female
+              <% end %>
+            </div>
+            <% if logged_in? %>
+              <div class = "action">
+                <%= link_to "Delete this Article", user_path(user), method: :delete,
+                    data: {confirm: "Are you sure you want to delete the article?"}, 
+                    class: "btn btn-xs btn-danger"%>
+
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<%= will_paginate %>
