@@ -1,4 +1,5 @@
 class RegionsController < ApplicationController
+  before_action :check_logged
   before_action :set_region, only: [:edit, :update, :destroy, :show]
 
   def index
@@ -44,6 +45,10 @@ class RegionsController < ApplicationController
 
     def set_region
       @region = Region.find(params[:id])    
+    end
+
+    def check_logged
+      require_user
     end
   
 end

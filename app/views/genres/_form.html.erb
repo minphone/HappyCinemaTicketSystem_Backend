@@ -1,0 +1,40 @@
+<%= render 'shared/errors', obj: @genre %>
+
+  <div class='row'>
+    <div class='col-xs-12'>
+
+      <%= form_for(@genre, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+
+      <div class= "form-group">
+        <div class= "control-label col-sm-4">
+          <%= f.label :genre_name %>
+        </div>
+
+        <div class="col-sm-4">
+          <%= f.text_field :genre_name, class: "form-control", placeholder: "Enter Genre", autofocus: true %>
+        </div>
+      </div>
+
+      <div class= "form-group">
+        <div class= "control-label col-sm-4">
+          <%= f.label :genre_description %>
+        </div>
+
+        <div class="col-sm-4">
+          <%= f.text_area :genre_description, rows: 8, class: "form-control", placeholder: "Enter Description", autofocus: true %>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <div class="col-sm-offset-2 col-md-8 center">
+            <%= f.submit(@genre.new_record? ? "Register" : "Update", class: "btn btn-primary btn-lg")%>
+          </div>
+      </div>
+
+      <div class= "col-xs-4 col-xs-offset-4 center">
+        [ <%= link_to 'Cancel request and return to Genre Listing', genres_path %> ]
+      </div>
+
+    </div>
+  </div>
+<% end %>

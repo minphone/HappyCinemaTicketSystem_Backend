@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :check_logged
   before_action :set_user, only: [:update, :show, :destroy]
 
   def new
@@ -46,5 +47,8 @@ class UsersController < ApplicationController
     end
     def set_user
       @user = User.find(params[:id])
+    end
+    def check_logged
+      require_user
     end
 end
