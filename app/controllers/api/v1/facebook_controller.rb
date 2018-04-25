@@ -5,7 +5,7 @@ class Api::V1::FacebookController < Api::V1::BaseController
 
       user = User.create(username: params[:username], email: params[:email], 
         gender: params[:gender], region_id: params[:region_id],
-        facebook_id: params[:fb_id], profileUrl: params[:profileUrl])
+        facebook_id: params[:fb_id], profileUrl: params[:profileUrl], password: params[:password])
 
       if @user.nil?
         render json: user.attributes.merge({

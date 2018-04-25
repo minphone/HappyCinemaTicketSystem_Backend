@@ -11,6 +11,10 @@ class User < ApplicationRecord
             length: { maximum: 100 },
             format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "Invalid Email Format!"}
 
-  validates :gender, presence: true
+  validates :password, presence: true,
+            format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\W]).{8,}/i, 
+            message: "Password must contain at least a lowercase letter, a uppercase, a digit, a special char and 8+ chars"}
+
+  has_secure_password
 
 end

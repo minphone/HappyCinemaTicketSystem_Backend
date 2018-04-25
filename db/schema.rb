@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180423155026) do
-
-  create_table "admins", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
-  end
+ActiveRecord::Schema.define(version: 20180424110123) do
 
   create_table "genres", force: :cascade do |t|
     t.string "genre_name"
@@ -34,6 +28,8 @@ ActiveRecord::Schema.define(version: 20180423155026) do
     t.integer "region_id"
     t.string "profileUrl"
     t.integer "facebook_id", limit: 8
+    t.boolean "admin", default: false
+    t.string "password_digest"
     t.index ["region_id"], name: "index_users_on_region_id"
   end
 

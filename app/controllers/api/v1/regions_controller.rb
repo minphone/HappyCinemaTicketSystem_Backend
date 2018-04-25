@@ -1,9 +1,7 @@
 class Api::V1::RegionsController < Api::V1::BaseController
 
-  def index
-
+  def new
     render json: Region.all
-    
   end
   
 end
