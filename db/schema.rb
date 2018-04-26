@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180426065233) do
+ActiveRecord::Schema.define(version: 20180426102533) do
+
+  create_table "genre_movies", force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "genre_id"
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string "genre_name"
     t.string "genre_description"
-  end
-
-  create_table "genres_movies", id: false, force: :cascade do |t|
-    t.integer "movie_id", null: false
-    t.integer "genre_id", null: false
-    t.index ["movie_id", "genre_id"], name: "index_genres_movies_on_movie_id_and_genre_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -29,7 +28,7 @@ ActiveRecord::Schema.define(version: 20180426065233) do
     t.string "movie_background_poster"
     t.string "short_desc"
     t.string "full_desc"
-    t.boolean "isMovie3D"
+    t.boolean "isMovie3D", default: false
   end
 
   create_table "regions", force: :cascade do |t|

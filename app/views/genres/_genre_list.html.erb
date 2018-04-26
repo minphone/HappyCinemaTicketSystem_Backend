@@ -1,0 +1,11 @@
+<div class= "form-group">
+  <div class= "control-label col-sm-4">
+    Choose Genre
+  </div>
+  <% @genres.each do |genre|%>
+    <%= check_box_tag 'genre', genre.genre_name %>
+    <%= genre.genre_name %>
+
+    
+  <%end%>
+</div>
