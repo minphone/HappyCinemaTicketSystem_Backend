@@ -1,4 +1,6 @@
 class Genre < ApplicationRecord
+
+  has_and_belongs_to_many :movies
   
   validates :genre_name, presence: true,
             uniqueness: { case_sensitive: false, message: "%{value} is already existed!"},

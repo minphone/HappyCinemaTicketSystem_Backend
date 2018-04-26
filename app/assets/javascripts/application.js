@@ -16,3 +16,19 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$('#submit').bind("click",function() { 
+
+  var imgVal = $('#image').val(); 
+  alert(imgVal);             
+  return false;
+
+});
+
+// $(document).ready(function() {
+//   $('[data-js-hide-link]').click(function(event){
+//     var imgVal = $('#image').val(); 
+//     alert(imgVal);  
+//     event.preventDefault(); 
+//   });
+// });

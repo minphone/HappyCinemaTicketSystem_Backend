@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: minphone
+  api_key: '689911391944547'
+  api_secret: exR1p8Fi-FaEBxd1EZLhuESeQ3w
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: minphone
+  api_key: '689911391944547'
+  api_secret: exR1p8Fi-FaEBxd1EZLhuESeQ3w
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: minphone
+  api_key: '689911391944547'
+  api_secret: exR1p8Fi-FaEBxd1EZLhuESeQ3w
+  enhance_image_tag: true
+  static_image_support: false

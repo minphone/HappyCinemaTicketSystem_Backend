@@ -10,6 +10,10 @@ end
 gem 'rails', '~> 5.1.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+gem 'cloudinary'
+gem "paperclip", "~> 6.0.0"
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '~> 5.0'

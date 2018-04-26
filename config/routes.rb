@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :regions
   resources :genres
   resources :users, only: [:index, :create, :update, :destroy, :show, :new]
+  resources :movies
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

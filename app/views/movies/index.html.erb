@@ -1,0 +1,32 @@
+<h1 align = "center">All Movie</h1>
+<div align = "center">
+  <%= will_paginate %>
+</div>
+<% @movies.each do |movie|%>
+  <div class = "row">
+    <div class= "col-xs-4 col-xs-offset-4 center">
+      <div class = "well well-lg">
+        <div class = "title">
+          <%= movie.title%>
+        </div>
+
+        <div class = "body">
+          <%= truncate(movie.full_desc, length: 100)%>
+        </div>
+
+        <% if logged_in? %>
+          <div class = "action">
+            <%= link_to 'Edit this Movie', edit_movie_path(movie), class: "btn btn-xs btn-primary" %>
+            <%= link_to "Delete this Movie", movie_path(movie), method: :delete,
+                data: {confirm: "Are you sure you want to delete the Movie?"}, 
+                class: "btn btn-xs btn-danger"%>
+
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<div align = "center">
+  <%= will_paginate %>
+</div>
+<%end%>
